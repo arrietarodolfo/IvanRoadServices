@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -21,7 +22,7 @@
 					<header id="header">
 						<a href="index.html" class="header-logo"><img src="images/logo4bg.png" alt="Ivan Road Services" /></a>
 						<span class="header-tagline">Ivan Road Services - 24/7 Mobile Diesel Mechanic</span>
-						<span class="header-espanol">Hablamos Español</span>
+						<span class="header-espanol">We speak Spanish</span>
 						<a href="tel:+16892789755" class="header-call-icon" title="Call +1 (689) 278-9755" aria-label="Call +1 (689) 278-9755"><span class="icon solid fa-phone" aria-hidden="true"></span></a>
 						<nav>
 							<a href="#menu">Menu</a>
@@ -36,7 +37,7 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="generic.html">About</a></li>
 								<li><a href="elements.html">Contact</a></li>
-								<li><a href="#footer">Request Quote</a></li>
+								<li><a href="tel:+16892789755">Request Quote</a></li>
 								<li><a href="tel:+16892789755">Call Now</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
@@ -47,7 +48,7 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="banner-recuadro-1">
-								<h2><span class="banner-title-line1">Servicio mecánico diésel a domicilio en Jacksonville</span><br><span class="banner-phone-line"><a href="tel:+16892789755" class="banner-call-link" title="Call us"><span class="icon solid fa-phone" aria-hidden="true"></span> +1 (689) 278-9755</a> Jacksonville Florida</span></h2>
+								<h2><span class="banner-title-line1">Mobile diesel mechanic service in Jacksonville</span><span class="banner-phone-line"><a href="tel:+16892789755" class="banner-call-link" title="Call us"><span class="icon solid fa-phone" aria-hidden="true"></span> +1 (689) 278-9755</a></span></h2>
 							</div>
 							<div class="banner-recuadro-3">
 								<p>Does your diesel vehicle need repair or maintenance?<br>We are Professional, fast, and reliable mechanical service at your location.</p>
@@ -61,11 +62,11 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/ico247.png" alt="24/7 Mobile Diesel Service" /></a>
+									<a href="#" class="image"><img src="images/ico247.png" alt="Emergency Road Service 24/7" /></a>
 									<div class="content">
-										<h2 class="major">Service 24/7</h2>
-										<p>We bring professional diesel mechanical service to you. From diagnosis to general repairs, we handle brakes, suspension, oil changes, sensors, and scanner work with honest pricing and reliable service.</p>
-										<a href="#footer" class="special">Request a quote</a>
+										<h2 class="major">Emergency Road Service 24/7</h2>
+										<p>Jump start, tire change, battery service (diagnostic, charge or replacement), emergency starting and basic on-site assistance. We come to you when you need help on the road.</p>
+										<a href="tel:+16892789755" class="special">Call now</a>
 									</div>
 								</div>
 							</section>
@@ -73,11 +74,11 @@
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/icoAA.png" alt="Air conditioning service" /></a>
 									<div class="content">
-										<h2 class="major">Brakes, Suspension &amp; Oil Change</h2>
-										<p>Full brake and suspension service plus oil changes for your diesel vehicle. All done at your location in Jacksonville and surrounding areas.</p>
-										<a href="tel:+16892789755" class="special">Call now</a>
+										<h2 class="major">Air Conditioning</h2>
+										<p>Professional A/C service for your diesel vehicle. Diagnosis, repair and recharge at your location in Jacksonville and surrounding areas.</p>
+										<a href="tel:+16892789755" class="special">Request a quote</a>
 									</div>
 								</div>
 							</section>
@@ -85,52 +86,73 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/icoScan.png" alt="Scanner diagnostics" /></a>
 									<div class="content">
-										<h2 class="major">Sensors, Scanner &amp; General Diesel Work</h2>
-										<p>Expert diagnostics with professional scanner equipment. We repair and maintain diesel engines with quality parts and professional attention.</p>
-										<a href="#footer" class="special">Request a quote</a>
+										<h2 class="major">Scanner</h2>
+										<p>Expert diagnostics with professional scanner equipment. We read codes and identify issues quickly so you get an accurate repair.</p>
+										<a href="tel:+16892789755" class="special">Request a quote</a>
 									</div>
 								</div>
 							</section>
 
 						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
+							<section id="four" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/icosElec.png" alt="Electrical diagnostics and repairs" /></a>
+									<div class="content">
+										<h2 class="major">Electrical Diagnostics &amp; Repairs</h2>
+										<p>Complete electrical and mechanical diagnostics. Battery and electrical system check and repair. General diagnostics including brakes and more.</p>
+										<a href="tel:+16892789755" class="special">Request a quote</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/icoTire.png" alt="Brakes and mechanical repairs" /></a>
+									<div class="content">
+										<h2 class="major">Brake &amp; Mechanical Component Repairs</h2>
+										<p>Brakes (inspection, diagnostic and repair). Wheel hub replacement. Minor roadside repairs—no towing required.</p>
+										<a href="tel:+16892789755" class="special">Request a quote</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Six -->
+							<section id="six" class="wrapper alt spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/icoMec.png" alt="Heavy truck specialized service" /></a>
+									<div class="content">
+										<h2 class="major">Specialized Heavy Truck Service</h2>
+										<p>Road service for Volvo, Freightliner and International. On-site service for heavy diesel trucks—no towing needed.</p>
+										<a href="tel:+16892789755" class="special">Call now</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Our Services summary -->
+							<section id="services-summary" class="wrapper style1">
 								<div class="inner">
 									<h2 class="major">Our Services</h2>
 									<p>We serve Jacksonville, St. John's County, St. Augustine and surrounding areas. Message us for a quick quote or call for same-day service.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Diesel diagnosis</h3>
-											<p>Professional diagnostics for your diesel engine. We identify issues quickly and accurately.</p>
-											<a href="#footer" class="special">Request a quote</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Brakes and suspension</h3>
-											<p>Brake and suspension repair and maintenance for diesel vehicles at your location.</p>
-											<a href="#footer" class="special">Request a quote</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Oil change</h3>
-											<p>Diesel oil changes and fluid services. We come to you for your convenience.</p>
-											<a href="#footer" class="special">Request a quote</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Sensors and scanner</h3>
-											<p>Scanner diagnostics and sensor repair. General diesel mechanical repairs.</p>
-											<a href="#footer" class="special">Request a quote</a>
-										</article>
-									</section>
 									<ul class="actions">
-										<li><a href="#footer" class="button">Request a quote</a></li>
+										<li><a href="tel:+16892789755" class="button">Request a quote</a></li>
+										<li><a href="tel:+16892789755" class="button primary">Call now</a></li>
 									</ul>
 								</div>
 							</section>
 
+					</section>
+
+				<!-- Map - Service area -->
+					<section id="map-section" class="wrapper alt style1">
+						<div class="inner">
+							<p class="map-section-label">Contact</p>
+							<h2 class="major">Service area</h2>
+							<p>We provide mobile diesel mechanic service in Jacksonville, St. John's County, St. Augustine and surrounding areas. The map shows our primary service area.</p>
+						</div>
+						<div id="service-area-map" class="map-fullwidth"></div>
 					</section>
 
 				<!-- Footer -->
@@ -154,7 +176,7 @@
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><a href="tel:+16892789755" class="button">Send Message</a></li>
 								</ul>
 							</form>
 							<ul class="contact">
@@ -164,7 +186,7 @@
 									St. John's County &bull; St. Augustine
 								</li>
 								<li class="icon solid fa-phone"><a href="tel:+16892789755">+1 (689) 278-9755</a></li>
-								<li class="icon solid fa-envelope"><a href="#footer">Message us for a quote</a></li>
+								<li class="icon solid fa-envelope"><a href="tel:+16892789755">Message us for a quote</a></li>
 								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/ivanroadservice" target="_blank" rel="noopener">instagram.com/ivanroadservice</a></li>
 							</ul>
 							<ul class="copyright">
@@ -182,6 +204,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+			<script>
+				(function() {
+					var mapEl = document.getElementById('service-area-map');
+					if (!mapEl) return;
+					// Center: Jacksonville / St. Johns County area (Fruit Cove vicinity)
+					var center = [30.15, -81.58];
+					var map = L.map('service-area-map').setView(center, 10);
+					L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+						attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+					}).addTo(map);
+					// Service area circle: ~12.5 mile radius
+					L.circle(center, {
+						color: '#c44',
+						fillColor: '#e88',
+						fillOpacity: 0.25,
+						weight: 2,
+						radius: 20000
+					}).addTo(map);
+				})();
+			</script>
 
 	</body>
 </html>
