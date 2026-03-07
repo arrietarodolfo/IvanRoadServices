@@ -3153,7 +3153,7 @@ input, select, textarea {
 			color: #ffffff;
 			border: 0;
 			text-decoration: none;
-			padding: 0.35em 0.5em;
+			padding: 0.5em 0.75em;
 			margin-right: 0.25em;
 			cursor: pointer;
 			-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -3165,6 +3165,7 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
+			font-size: 1.05em;
 		}
 
 		#header .header-call-icon:hover {
@@ -3176,6 +3177,17 @@ input, select, textarea {
 			content: '\f095';
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
+		}
+
+		#header .header-call-icon .icon.solid.fa-phone {
+			font-size: 1.15em;
+		}
+
+		#header .header-call-icon .header-call-text {
+			margin-left: 0.45em;
+			font-size: 0.95em;
+			font-weight: 700;
+			letter-spacing: 0.08em;
 		}
 
 		#header h1 {
@@ -3288,6 +3300,15 @@ input, select, textarea {
 				font-size: 0.75em;
 			}
 
+			/* CALL NOW 24/7 - tamaño cómodo en tablet */
+			#header .header-call-icon {
+				padding: 0.5em 0.7em;
+				font-size: 1em;
+			}
+			#header .header-call-icon .header-call-text {
+				font-size: 0.9em;
+			}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3352,6 +3373,19 @@ input, select, textarea {
 								background-color: rgba(255, 255, 255, 0.15);
 							}
 
+			/* CALL NOW 24/7 - visible y táctil en móvil */
+			#header .header-call-icon {
+				padding: 0.5em 0.6em;
+				font-size: 0.95em;
+				min-height: 2.5em;
+			}
+			#header .header-call-icon .icon.solid.fa-phone {
+				font-size: 1.1em;
+			}
+			#header .header-call-icon .header-call-text {
+				font-size: 0.8em;
+			}
+
 		}
 
 		@media screen and (max-width: 480px) {
@@ -3375,6 +3409,19 @@ input, select, textarea {
 
 			#header .header-logo img {
 				max-height: 2.6em;
+			}
+
+			/* CALL NOW 24/7 - pantallas pequeñas, mantiene área táctil */
+			#header .header-call-icon {
+				padding: 0.45em 0.55em;
+				font-size: 0.9em;
+				min-height: 2.4em;
+			}
+			#header .header-call-icon .icon.solid.fa-phone {
+				font-size: 1.05em;
+			}
+			#header .header-call-icon .header-call-text {
+				font-size: 0.72em;
 			}
 
 			#header nav a[href="#menu"] {
@@ -4321,11 +4368,10 @@ input, select, textarea {
 			}
 
 			/* Más espacio entre banner y primera sección (icono 24/7) en móvil.
-			   Usar padding-top + margin-top negativo para que el fondo sólido de la sección
-			   tape el hueco y no se vea el body (segundo fondo de camiones). */
-			#wrapper > .wrapper.spotlight:first-child {
-				margin-top: -2em;
-				padding-top: 6em;
+			   Sin margen negativo para que la sección 24/7 no se vea cortada. */
+			#wrapper > #one.wrapper.spotlight {
+				margin-top: 0.5em;
+				padding-top: 2em;
 			}
 
 				.wrapper:before, .wrapper:after {
@@ -4367,9 +4413,9 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-			#wrapper > .wrapper.spotlight:first-child {
-				margin-top: -1.5em;
-				padding-top: 5.5em;
+			#wrapper > #one.wrapper.spotlight {
+				margin-top: 0.4em;
+				padding-top: 1.5em;
 			}
 
 			.wrapper.spotlight .inner {
@@ -4399,11 +4445,447 @@ input, select, textarea {
 
 		}
 
+/* Services summary - franja inferior sólida; sin franja superior para no tapar el texto del banner (recuadro-3) */
+
+	#services-summary.wrapper {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+	}
+
+	#services-summary.wrapper .inner {
+		padding-top: 0.5em;
+		padding-bottom: 0.35em;
+	}
+
+	/* No extender franja negra hacia arriba: no tapar "Does your diesel vehicle need repair..." del banner */
+	#services-summary.wrapper:before {
+		display: none !important;
+	}
+
+	/* Franja inferior mínima para que Our Services funcione como título y no corte las opciones */
+	#services-summary.wrapper:after {
+		background: #000000 !important;
+		background-image: none !important;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		height: 1em !important;
+		box-shadow: none;
+	}
+
+	@media screen and (max-width: 980px) {
+
+		#services-summary.wrapper {
+			margin-top: 0.4em;
+			margin-bottom: 0;
+		}
+
+		#services-summary.wrapper .inner {
+			padding-top: 0.45em;
+			padding-bottom: 0.3em;
+		}
+
+		#services-summary.wrapper:after {
+			height: 0.75em !important;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#services-summary.wrapper {
+			margin-top: 0.35em;
+			margin-bottom: 0;
+		}
+
+		#services-summary.wrapper .inner {
+			padding-top: 0.4em;
+			padding-bottom: 0.25em;
+		}
+
+		#services-summary.wrapper:after {
+			height: 0.6em !important;
+		}
+
+	}
+
+/* Primer spotlight (#one) - franja superior sólida para tapar el fondo entre Our Services y 24/7 */
+
+	#one.wrapper.spotlight {
+		margin-top: 0.75em;
+	}
+
+	#one.wrapper.spotlight:before {
+		background: #000000 !important;
+		background-image: none !important;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		height: 6.5em !important;
+		top: -6.5em !important;
+		box-shadow: none;
+	}
+
+	@media screen and (max-width: 980px) {
+		#one.wrapper.spotlight {
+			margin-top: 0.5em;
+		}
+		#one.wrapper.spotlight:before {
+			height: 3em !important;
+			top: -3em !important;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		#one.wrapper.spotlight {
+			margin-top: 0.4em;
+		}
+		#one.wrapper.spotlight:before {
+			height: 2em !important;
+			top: -2em !important;
+		}
+	}
+
+/* Brands section - carousel (fondo blanco para mejor visibilidad de los logos) */
+
+	#brands-section {
+		position: relative;
+		overflow: hidden;
+		background-color: #ffffff !important;
+		margin-top: -6.5em;
+		padding-top: 6.5em;
+		margin-bottom: -6.5em;
+		padding-bottom: 14em;
+		box-sizing: border-box;
+	}
+
+	/* Sustituir el triángulo superior por franja sólida para tapar el fondo */
+	#brands-section.wrapper:before {
+		background: #ffffff !important;
+		background-image: none !important;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		height: 6em !important;
+		top: -6em !important;
+		box-shadow: none;
+	}
+
+	/* Franja inferior sólida para tapar el fondo entre Brands y Map */
+	#brands-section.wrapper:after {
+		background: #ffffff !important;
+		background-image: none !important;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		height: 14em !important;
+		bottom: 0 !important;
+		top: auto !important;
+		box-shadow: none;
+	}
+
+	#brands-section .brands-section-label {
+		font-family: Raleway, Helvetica, sans-serif;
+		font-size: 0.75em;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.5);
+		margin: 0 0 0.5em 0;
+	}
+
+	#brands-section .brands-section-label::after {
+		content: '';
+		display: block;
+		width: 2.5em;
+		height: 3px;
+		background: #e67e22;
+		margin-top: 0.4em;
+	}
+
+	#brands-section h2.major {
+		margin-top: 0;
+		color: #1a1a1a;
+		border-bottom-color: rgba(0, 0, 0, 0.15);
+	}
+
+	#brands-section .inner > p {
+		color: #333333;
+	}
+
+	.brands-carousel-wrap {
+		width: 100%;
+		overflow: hidden;
+		margin-top: 1.5em;
+		padding: 1em 0;
+	}
+
+	.brands-carousel {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.brands-carousel .brands-track {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		width: -moz-max-content;
+		width: max-content;
+		-moz-animation: brands-scroll 90s linear infinite;
+		-webkit-animation: brands-scroll 90s linear infinite;
+		-ms-animation: brands-scroll 90s linear infinite;
+		animation: brands-scroll 90s linear infinite;
+	}
+
+	.brands-carousel .brands-track img {
+		height: 7em;
+		width: auto;
+		max-width: 16em;
+		object-fit: contain;
+		margin: 0 3em;
+		opacity: 0.9;
+		-moz-filter: brightness(1.05);
+		-webkit-filter: brightness(1.05);
+		filter: brightness(1.05);
+	}
+
+	@-moz-keyframes brands-scroll {
+		0% { -moz-transform: translateX(0); }
+		100% { -moz-transform: translateX(-50%); }
+	}
+
+	@-webkit-keyframes brands-scroll {
+		0% { -webkit-transform: translateX(0); }
+		100% { -webkit-transform: translateX(-50%); }
+	}
+
+	@keyframes brands-scroll {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+
+	@media screen and (max-width: 980px) {
+
+		#brands-section.wrapper:before {
+			height: 4.75em !important;
+			top: -4.75em !important;
+		}
+
+		#brands-section.wrapper:after {
+			height: 10em !important;
+		}
+
+		#brands-section {
+			margin-top: -4.75em;
+			padding-top: 4.75em;
+			margin-bottom: -4.75em;
+			padding-bottom: 10em;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.brands-carousel .brands-track img {
+			height: 5.5em;
+			margin: 0 2.5em;
+		}
+
+		.brands-carousel .brands-track {
+			-moz-animation-duration: 70s;
+			-webkit-animation-duration: 70s;
+			animation-duration: 70s;
+		}
+
+		#brands-section.wrapper:before {
+			height: 2.5em !important;
+			top: -2.5em !important;
+		}
+
+		#brands-section.wrapper:after {
+			height: 8em !important;
+		}
+
+		#brands-section {
+			margin-top: -2.5em;
+			padding-top: 2.5em;
+			margin-bottom: -2.5em;
+			padding-bottom: 8em;
+		}
+
+		#brands-section .inner {
+			padding-left: 2em;
+			padding-right: 2em;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.brands-carousel .brands-track img {
+			height: 4.5em;
+			margin: 0 2em;
+		}
+
+		#brands-section .inner {
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+		}
+
+		.brands-carousel-wrap {
+			margin-top: 1em;
+		}
+
+	}
+
+/* Gallery section */
+
+	#gallery-section.gallery-section {
+		background-color: #1a1a1a;
+		position: relative;
+	}
+
+	.gallery-section-label {
+		font-family: Raleway, Helvetica, sans-serif;
+		font-size: 0.75em;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.5);
+		margin: 0 0 0.5em 0;
+	}
+
+	.gallery-section-label::after {
+		content: '';
+		display: block;
+		width: 2.5em;
+		height: 3px;
+		background: #e67e22;
+		margin-top: 0.4em;
+	}
+
+	#gallery-section h2.major {
+		margin-top: 0;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25em;
+		margin-top: 2em;
+	}
+
+	#gallery-section .gallery-item {
+		margin: 0;
+		border-radius: 8px;
+		overflow: hidden;
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	}
+
+	#gallery-section.visible .gallery-item {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	#gallery-section .gallery-item:nth-child(1) { transition-delay: 0.05s; }
+	#gallery-section .gallery-item:nth-child(2) { transition-delay: 0.1s; }
+	#gallery-section .gallery-item:nth-child(3) { transition-delay: 0.15s; }
+	#gallery-section .gallery-item:nth-child(4) { transition-delay: 0.2s; }
+	#gallery-section .gallery-item:nth-child(5) { transition-delay: 0.25s; }
+	#gallery-section .gallery-item:nth-child(6) { transition-delay: 0.3s; }
+	#gallery-section .gallery-item:nth-child(7) { transition-delay: 0.35s; }
+	#gallery-section .gallery-item:nth-child(8) { transition-delay: 0.4s; }
+	#gallery-section .gallery-item:nth-child(9) { transition-delay: 0.45s; }
+	#gallery-section .gallery-item:nth-child(10) { transition-delay: 0.5s; }
+	#gallery-section .gallery-item:nth-child(11) { transition-delay: 0.55s; }
+	#gallery-section .gallery-item:nth-child(12) { transition-delay: 0.6s; }
+	#gallery-section .gallery-item:nth-child(13) { transition-delay: 0.65s; }
+	#gallery-section .gallery-item:nth-child(14) { transition-delay: 0.7s; }
+
+	#gallery-section .gallery-item img {
+		display: block;
+		width: 100%;
+		height: 220px;
+		object-fit: cover;
+		vertical-align: bottom;
+	}
+
+	@media screen and (max-width: 980px) {
+		.gallery-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1em;
+		}
+		#gallery-section .gallery-item img {
+			height: 200px;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		#gallery-section .inner {
+			padding-left: 2em;
+			padding-right: 2em;
+		}
+		.gallery-grid {
+			grid-template-columns: 1fr;
+			gap: 0.85em;
+			margin-top: 1.75em;
+		}
+		#gallery-section .gallery-item img {
+			height: 220px;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#gallery-section .inner {
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+		}
+		.gallery-grid {
+			grid-template-columns: 1fr;
+			gap: 0.75em;
+			margin-top: 1.5em;
+		}
+		#gallery-section .gallery-item img {
+			height: 240px;
+		}
+		.gallery-section-label {
+			font-size: 0.7em;
+		}
+		#gallery-section h2.major {
+			font-size: 0.95em;
+		}
+	}
+
 /* Map section - Service area */
 
 	#map-section {
 		background-color: #2e3141;
 		position: relative;
+	}
+
+	/* Franja superior sólida para tapar el fondo entre Brands y Map */
+	#map-section.wrapper:before {
+		background: #2e3141 !important;
+		background-image: none !important;
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		height: 6em !important;
+		top: -6em !important;
+		box-shadow: none;
 	}
 
 	/* Sustituir el triángulo inferior por una franja sólida del mismo gris para tapar el fondo */
@@ -4445,6 +4927,11 @@ input, select, textarea {
 		margin-top: 0;
 	}
 
+	#map-section .service-area-list {
+		margin: 0.75em 0 0 1.25em;
+		padding-left: 0.5em;
+	}
+
 	#map-section .map-fullwidth {
 		width: 100%;
 		height: 420px;
@@ -4459,7 +4946,19 @@ input, select, textarea {
 		font-size: 0.7em;
 	}
 
+	@media screen and (max-width: 980px) {
+		#map-section.wrapper:before {
+			height: 4.75em !important;
+			top: -4.75em !important;
+		}
+	}
+
 	@media screen and (max-width: 736px) {
+
+		#map-section.wrapper:before {
+			height: 2.5em !important;
+			top: -2.5em !important;
+		}
 
 		#map-section .map-fullwidth {
 			height: 340px;
