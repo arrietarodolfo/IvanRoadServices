@@ -86,23 +86,23 @@
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>Message us for a quick quote. We serve Jacksonville, St. John's County, and St. Augustine. Honest work &bull; Affordable prices &bull; Professional service.</p>
-							<form method="post" action="#">
+							<form method="post" action="#" id="contact-form">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
+										<input type="text" name="name" id="name" placeholder="Your name" />
 									</div>
 									<div class="field">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
+										<input type="email" name="email" id="email" placeholder="your@email.com" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
+										<textarea name="message" id="message" rows="4" placeholder="Your message"></textarea>
 									</div>
 								</div>
 								<ul class="actions">
-									<li><a href="tel:+16892789755" class="button">Send Message</a></li>
+									<li><button type="button" id="send-whatsapp-btn" class="button">Send Message</button></li>
 								</ul>
 							</form>
 							<ul class="contact">
@@ -130,6 +130,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var btn = document.getElementById('send-whatsapp-btn');
+					if (!btn) return;
+					var form = document.getElementById('contact-form');
+					var nameEl = form && form.querySelector('#name');
+					var emailEl = form && form.querySelector('#email');
+					var messageEl = form && form.querySelector('#message');
+					btn.addEventListener('click', function() {
+						var name = (nameEl && nameEl.value.trim()) || '';
+						var email = (emailEl && emailEl.value.trim()) || '';
+						var msg = (messageEl && messageEl.value.trim()) || '';
+						var text = 'Nombre: ' + name + '\nEmail: ' + email + '\nMensaje: ' + msg;
+						var url = 'https://wa.me/16892789755?text=' + encodeURIComponent(text);
+						window.open(url, '_blank', 'noopener');
+					});
+				})();
+			</script>
 
 	</body>
 </html>
