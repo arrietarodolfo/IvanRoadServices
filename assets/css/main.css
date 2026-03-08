@@ -3695,8 +3695,8 @@ input, select, textarea {
 		#banner .banner-recuadro-1 h2 .banner-phone-line a {
 			color: #000000;
 			font-weight: 900;
-			-webkit-text-stroke: 0.5px #ffffff;
-			text-stroke: 0.5px #ffffff;
+			-webkit-text-stroke: 0.35px #000000;
+			text-stroke: 0.35px #000000;
 		}
 
 		/* Recuadro 3: texto inferior */
@@ -3854,6 +3854,14 @@ input, select, textarea {
 			#banner .banner-recuadro-1 .banner-phone-line {
 				display: block;
 				text-align: center;
+			}
+
+			/* Mismo estilo que web: número en negro como el título */
+			#banner .banner-recuadro-1 .banner-phone-line,
+			#banner .banner-recuadro-1 .banner-phone-line a {
+				color: #000000 !important;
+				-webkit-text-stroke: 0.35px #000000;
+				text-stroke: 0.35px #000000;
 			}
 
 			#banner .banner-recuadro-3 p {
@@ -4494,8 +4502,13 @@ input, select, textarea {
 
 	@media screen and (max-width: 736px) {
 
+		/* Evitar franja clara entre banner y Our Services en móvil */
+		#wrapper {
+			background-color: #000000;
+		}
+
 		#services-summary.wrapper {
-			margin-top: 0.35em;
+			margin-top: 0;
 			margin-bottom: 0;
 		}
 
@@ -4640,10 +4653,10 @@ input, select, textarea {
 		align-items: center;
 		width: -moz-max-content;
 		width: max-content;
-		-moz-animation: brands-scroll 90s linear infinite;
-		-webkit-animation: brands-scroll 90s linear infinite;
-		-ms-animation: brands-scroll 90s linear infinite;
-		animation: brands-scroll 90s linear infinite;
+		-moz-animation: brands-scroll 55s linear infinite;
+		-webkit-animation: brands-scroll 55s linear infinite;
+		-ms-animation: brands-scroll 55s linear infinite;
+		animation: brands-scroll 55s linear infinite;
 	}
 
 	.brands-carousel .brands-track img {
@@ -4701,9 +4714,9 @@ input, select, textarea {
 		}
 
 		.brands-carousel .brands-track {
-			-moz-animation-duration: 70s;
-			-webkit-animation-duration: 70s;
-			animation-duration: 70s;
+			-moz-animation-duration: 43s;
+			-webkit-animation-duration: 43s;
+			animation-duration: 43s;
 		}
 
 		#brands-section.wrapper:before {
@@ -4864,6 +4877,130 @@ input, select, textarea {
 			font-size: 0.7em;
 		}
 		#gallery-section h2.major {
+			font-size: 0.95em;
+		}
+	}
+
+/* Reviews section - carousel vertical (Google reviews) */
+
+	#reviews-section .reviews-section-label {
+		font-family: Raleway, Helvetica, sans-serif;
+		font-size: 0.75em;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.5);
+		margin: 0 0 0.5em 0;
+	}
+
+	#reviews-section .reviews-section-label::after {
+		content: '';
+		display: block;
+		width: 2.5em;
+		height: 3px;
+		background: #e67e22;
+		margin-top: 0.4em;
+	}
+
+	#reviews-section h2.major {
+		margin-top: 0;
+	}
+
+	.reviews-carousel-wrap {
+		width: 100%;
+		max-width: 22em;
+		margin: 2em auto 0;
+		height: 420px;
+		overflow: hidden;
+		position: relative;
+		border-radius: 12px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+	}
+
+	.reviews-carousel {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	@keyframes reviews-scroll-vertical {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(-50%); }
+	}
+
+	@-moz-keyframes reviews-scroll-vertical {
+		0% { -moz-transform: translateY(0); }
+		100% { -moz-transform: translateY(-50%); }
+	}
+
+	@-webkit-keyframes reviews-scroll-vertical {
+		0% { -webkit-transform: translateY(0); }
+		100% { -webkit-transform: translateY(-50%); }
+	}
+
+	.reviews-carousel .reviews-track {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		-moz-animation: reviews-scroll-vertical 135s linear infinite;
+		-webkit-animation: reviews-scroll-vertical 135s linear infinite;
+		animation: reviews-scroll-vertical 135s linear infinite;
+	}
+
+	.reviews-carousel .reviews-track img {
+		width: 100%;
+		max-width: 20em;
+		height: auto;
+		object-fit: contain;
+		margin: 0 0 1em 0;
+		display: block;
+		border-radius: 8px;
+		flex-shrink: 0;
+	}
+
+	.reviews-carousel .reviews-track img:last-child {
+		margin-bottom: 0;
+	}
+
+	@media screen and (max-width: 980px) {
+		.reviews-carousel-wrap {
+			max-width: 20em;
+			height: 380px;
+			margin-top: 1.5em;
+		}
+		.reviews-carousel .reviews-track {
+			animation-duration: 118s;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.reviews-carousel-wrap {
+			max-width: 18em;
+			height: 340px;
+			margin-top: 1.25em;
+		}
+		.reviews-carousel .reviews-track img {
+			max-width: 16em;
+		}
+		.reviews-carousel .reviews-track {
+			animation-duration: 101s;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.reviews-carousel-wrap {
+			max-width: 100%;
+			height: 320px;
+			margin-top: 1em;
+		}
+		.reviews-carousel .reviews-track img {
+			max-width: 100%;
+		}
+		#reviews-section .reviews-section-label {
+			font-size: 0.7em;
+		}
+		#reviews-section h2.major {
 			font-size: 0.95em;
 		}
 	}
@@ -5033,12 +5170,18 @@ input, select, textarea {
 			color: #000000;
 		}
 
+		#footer .inner .contact li a {
+			display: inline-block;
+			transition: transform 0.25s ease;
+		}
+
 		#footer .inner h2.major {
 			border-bottom-color: rgba(0, 0, 0, 0.2);
 		}
 
 		#footer .inner .contact li a:hover {
-			color: #333333;
+			color: #000000 !important;
+			transform: scale(1.04);
 		}
 
 		#footer .inner input[type="text"],
