@@ -92,6 +92,8 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
+		scroll-padding-top: 5em;
 	}
 
 	*, *:before, *:after {
@@ -3649,39 +3651,6 @@ input, select, textarea {
 			text-stroke: 0.5px #000000;
 		}
 
-		#banner .banner-recuadro-1 h2 a {
-			color: inherit;
-			-webkit-text-stroke: inherit;
-			text-stroke: inherit;
-			border-bottom: none;
-		}
-
-		#banner .banner-recuadro-1 h2 a.banner-call-link {
-			padding: 0.25em 0.5em;
-			cursor: pointer;
-			display: inline-flex;
-			align-items: center;
-			-moz-align-items: center;
-			-webkit-align-items: center;
-			-ms-align-items: center;
-			text-decoration: none;
-		}
-
-		#banner .banner-recuadro-1 h2 a.banner-call-link .icon {
-			margin-right: 0.4em;
-			font-size: 0.95em;
-		}
-
-		#banner .banner-recuadro-1 h2 a.banner-call-link .icon.solid.fa-phone:before {
-			content: '\f095';
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 900;
-		}
-
-		#banner .banner-recuadro-1 h2 a:hover {
-			color: #ffffff;
-		}
-
 		#banner .banner-recuadro-1 h2 .banner-title-line1 {
 			color: #000000;
 			font-weight: 700;
@@ -3691,12 +3660,108 @@ input, select, textarea {
 			letter-spacing: 0.02em;
 		}
 
-		#banner .banner-recuadro-1 h2 .banner-phone-line,
-		#banner .banner-recuadro-1 h2 .banner-phone-line a {
-			color: #000000;
+		/* CTA teléfono hero: botón fantasma dorado, área táctil amplia */
+		#banner .banner-phone-cta {
+			margin-top: 0.85em;
+			display: -moz-inline-flex;
+			display: -webkit-inline-flex;
+			display: inline-flex;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			gap: 0.55em;
+			min-height: 3rem;
+			min-width: 11rem;
+			padding: 0.7em 1.15em 0.75em 1.15em;
+			font-family: Raleway, Helvetica, sans-serif;
+			font-size: 1.2em;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			line-height: 1.2;
+			color: #d4af37 !important;
+			text-decoration: none;
+			border-bottom: none !important;
+			background: rgba(0, 0, 0, 0.4);
+			border: 2px solid #d4af37;
+			border-radius: 10px;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+			position: relative;
+			overflow: hidden;
+			-moz-transition: opacity 0.5s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -moz-transform 0.2s ease;
+			-webkit-transition: opacity 0.5s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease;
+			-ms-transition: opacity 0.5s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -ms-transform 0.2s ease;
+			transition: opacity 0.5s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+		}
+
+		#banner .banner-phone-cta .icon {
+			font-size: 0.95em;
+			color: #d4af37 !important;
+		}
+
+		#banner .banner-phone-cta .icon.solid.fa-phone:before {
+			content: '\f095';
+			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
-			-webkit-text-stroke: 0.35px #000000;
-			text-stroke: 0.35px #000000;
+		}
+
+		#banner .banner-phone-cta .banner-phone-cta__number {
+			position: relative;
+			display: inline-block;
+			padding-bottom: 2px;
+		}
+
+		#banner .banner-phone-cta .banner-phone-cta__number::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #d4af37 20%, #d4af37 80%, transparent);
+			-moz-transform: scaleX(0.35);
+			-webkit-transform: scaleX(0.35);
+			-ms-transform: scaleX(0.35);
+			transform: scaleX(0.35);
+			opacity: 0.85;
+			-moz-transition: -moz-transform 0.25s ease;
+			-webkit-transition: -webkit-transform 0.25s ease;
+			-ms-transition: -ms-transform 0.25s ease;
+			transition: transform 0.25s ease;
+		}
+
+		#banner .banner-phone-cta:hover .banner-phone-cta__number::after,
+		#banner .banner-phone-cta:focus-visible .banner-phone-cta__number::after {
+			-moz-transform: scaleX(1);
+			-webkit-transform: scaleX(1);
+			-ms-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+
+		#banner .banner-phone-cta:hover,
+		#banner .banner-phone-cta:focus-visible {
+			color: #0a0a0a !important;
+			background: #d4af37;
+			border-color: #f4e4a6;
+			box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.35);
+			-moz-transform: translateY(-1px);
+			-webkit-transform: translateY(-1px);
+			-ms-transform: translateY(-1px);
+			transform: translateY(-1px);
+		}
+
+		#banner .banner-phone-cta:hover .icon,
+		#banner .banner-phone-cta:focus-visible .icon {
+			color: #0a0a0a !important;
+		}
+
+		#banner .banner-phone-cta:focus-visible {
+			outline: 2px solid #f4e4a6;
+			outline-offset: 3px;
 		}
 
 		/* Recuadro 3: texto inferior */
@@ -3818,6 +3883,15 @@ input, select, textarea {
 				font-size: 1em;
 			}
 
+			#banner .banner-phone-cta {
+				font-size: 1.05em;
+				min-height: 3.25rem;
+				padding: 0.85em 1.1em;
+				width: 100%;
+				max-width: 22em;
+				box-sizing: border-box;
+			}
+
 			#banner .banner-recuadro-3 p {
 				font-size: 0.8em;
 			}
@@ -3850,18 +3924,14 @@ input, select, textarea {
 				line-height: 1.35;
 			}
 
-			#banner .banner-recuadro-1 .banner-title-line1,
-			#banner .banner-recuadro-1 .banner-phone-line {
+			#banner .banner-recuadro-1 .banner-title-line1 {
 				display: block;
 				text-align: center;
 			}
 
-			/* Mismo estilo que web: número en negro como el título */
-			#banner .banner-recuadro-1 .banner-phone-line,
-			#banner .banner-recuadro-1 .banner-phone-line a {
-				color: #000000 !important;
-				-webkit-text-stroke: 0.35px #000000;
-				text-stroke: 0.35px #000000;
+			#banner .banner-phone-cta {
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 			#banner .banner-recuadro-3 p {
@@ -3884,6 +3954,22 @@ input, select, textarea {
 			-webkit-filter: blur(2px);
 			-ms-filter: blur(2px);
 			filter: blur(2px);
+		}
+
+		body.is-preload #banner .banner-phone-cta {
+			opacity: 0;
+			-moz-transform: translateY(0.35em);
+			-webkit-transform: translateY(0.35em);
+			-ms-transform: translateY(0.35em);
+			transform: translateY(0.35em);
+			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease;
+			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease;
+			transition: opacity 0.5s ease, transform 0.5s ease;
+			-moz-transition-delay: 0.72s;
+			-webkit-transition-delay: 0.72s;
+			-ms-transition-delay: 0.72s;
+			transition-delay: 0.72s;
 		}
 
 		body.is-preload #banner .banner-recuadro-3 p {
@@ -5366,6 +5452,94 @@ input, select, textarea {
 
 		#footer .inner {
 			padding: 2em 1.5em 0.1em 1.5em ;
+		}
+
+	}
+
+/* --------------------------------------------------------------------------
+   Conversión: FAB "CALL US NOW" → tel:+16892789755
+   -------------------------------------------------------------------------- */
+
+	#footer {
+		scroll-margin-top: 5em;
+	}
+
+	.fab-solicitar {
+		position: fixed;
+		bottom: max(1.35rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
+		right: max(1rem, env(safe-area-inset-right, 0px));
+		z-index: 10001;
+		display: -moz-inline-flex;
+		display: -webkit-inline-flex;
+		display: inline-flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		gap: 0.52em;
+		padding: 0.75em 1.32em 0.75em 1.44em;
+		font-family: Raleway, Helvetica, sans-serif;
+		font-size: 0.9rem;
+		font-weight: 700;
+		letter-spacing: 0.07em;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #d4af37 !important;
+		background: #0a0a0a;
+		border: 2px solid #d4af37;
+		border-radius: 999px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(212, 175, 55, 0.12);
+		-moz-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -moz-transform 0.2s ease;
+		-webkit-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease;
+		-ms-transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, -ms-transform 0.2s ease;
+		transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+
+	.fab-solicitar:hover {
+		background: #d4af37;
+		color: #0a0a0a !important;
+		border-color: #f4e4a6;
+		box-shadow: 0 6px 26px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.25);
+		-moz-transform: scale(1.045);
+		-webkit-transform: scale(1.045);
+		-ms-transform: scale(1.045);
+		transform: scale(1.045);
+	}
+
+	.fab-solicitar:focus-visible {
+		outline: 2px solid #f4e4a6;
+		outline-offset: 3px;
+	}
+
+	.fab-solicitar-icon {
+		font-weight: 900;
+		line-height: 1;
+		font-size: 1.05em;
+	}
+
+	body.is-menu-visible .fab-solicitar {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.fab-solicitar {
+			font-size: 0.75rem;
+			padding: 0.55em 0.98em 0.55em 1.1em;
+			bottom: max(1rem, calc(env(safe-area-inset-bottom, 0px) + 0.35rem));
+			right: max(0.65rem, env(safe-area-inset-right, 0px));
+			gap: 0.4em;
+			box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4), 0 1px 6px rgba(212, 175, 55, 0.1);
+		}
+
+		.fab-solicitar:hover {
+			-moz-transform: scale(1.03);
+			-webkit-transform: scale(1.03);
+			-ms-transform: scale(1.03);
+			transform: scale(1.03);
 		}
 
 	}
